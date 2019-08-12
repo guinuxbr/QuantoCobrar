@@ -14,24 +14,41 @@ h1 {
 section {
     background: #ffffff;
     border-radius: 10px;
+    box-shadow: 10px 10px 10px #0000005d;
+    margin: auto;
     padding: 15px;
     width: auto;
-    margin: auto;
-    box-shadow: 10px 10px 10px #0000005d;
 }
 
 input {
     border-radius: 5px;
     width: 100px;
+    font-weight: bold; 
 }
 
-input#calcular {
+.button {
+    background-color: blue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
     font-size: 15pt;
+    opacity: 0.6;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
 }
 
+.button:hover {
+    opacity: 1
+}
+
+div#resultado {
+    padding: 10px 10px;
+}
 footer {
     color: #ffffff;
-    text-align: center;
-    font: normal 15pt Tahoma;
     font-style: italic;
+    font: normal 15pt Tahoma;
+    text-align: center;
 }
