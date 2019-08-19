@@ -1,12 +1,12 @@
 function calcular() {
     // Captura os valores preenchidos no form.
-    let pesoNovelo = document.getElementById('pesoNovelo').value
+    let pesoNovelo = document.getElementById('pesoNovelo').value;
     let valorNovelo = document.getElementById("valorNovelo").value;
     let pesoFio = document.getElementById("pesoFio").value;
     let valorHora = document.getElementById("valorHora").value;
     let horasTrabalhadas = document.getElementById("horasTrabalhadas").value;
-    let resultado = document.getElementById('resultado');
-    
+    let resultado = document.getElementById('resultado');  
+
     // Valida os valores dos dados inseridos.
     if (pesoNovelo < 1 || valorNovelo < 1 || pesoFio < 1 || valorHora < 1 || horasTrabalhadas < 1) {
         resultado.innerHTML = `<font color="red">Os campos devem ter o valor de, no mínimo 1(um)!!!</font>`
@@ -22,7 +22,7 @@ function calcular() {
         let valorGrama = valorNovelo / pesoNovelo;
         let valorLinha = valorGrama * pesoFio;
         let totalTrabalhado = valorHora * horasTrabalhadas;
-        let valorDaPeca = valorLinha + totalTrabalhado
+        let valorDaPeca = valorLinha + totalTrabalhado;
         
         // Exibe o resultado dos cálculos.
         resultado.innerHTML = `O valor do fio utilizado foi ${valorLinha.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.<br>`
