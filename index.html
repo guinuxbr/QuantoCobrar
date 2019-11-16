@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quanto Cobrar?</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quanto Cobrar?</h1>
+        <p>CALCULADORA PARA ARTESANATO</p>
+    </header>
+    
+    <section>
+        <div id="dados">
+            <p>Peso do novelo:
+                <input tabindex="1" type="number" required name="pesoNovelo" id="pesoNovelo" min="1">g.
+            </p>
+            <p>Valor do novelo: R$
+                <input tabindex="2" type="number" required name="valorNovelo" id="valorNovelo" min="1">
+            </p>
+            <p>Peso da peça pronta:
+                <input tabindex="3" type="number" required name="pesoFio" id="pesoFio" min="1">g.
+            </p>
+            <p>Quanto vale sua hora: R$
+                <input tabindex="4" type="number" required name="valorHora" id="valorHora" min="1">
+            </p>
+            <p>Total de horas trabalhadas:
+                <input tabindex="5" type="number" required name="horasTrabalhadas" id="horasTrabalhadas" min="1">h.
+            </p>
+            <p>Margem de lucro:
+                <input tabindex="6" type="number" required name="margemLucro" id="margemLucro" min="1">%.
+            </p>
+            <button tabindex="7" class="button" value="Limpar" id="limpar" onclick="limpar()">Limpar</button>
+            <button tabindex="8" class="button" value="Calcular" id="calcular" onclick="calcular()">Calcular</button>
+        </div>
+        <div id="resultado">
+            Preencha os dados acima para ver o resultado!
+        </div>
+    </section>
+    <p></p>
+    <section>
+        <div id="salvarPDF">
+            Digite o nome do(a) cliente e clique para salvar um PDF com o resultado:<br>
+            <input type="text" id="cliente" name="cliente">
+
+            <button tabindex="9" class="button" value="salvarPDF" id="salvarPDF" onclick="salvarPDF()">Salvar PDF</button>
+        </div>
+    </section>
+     
+    <footer>
+        <p>GLLM 2019</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+</body>
+</html>
