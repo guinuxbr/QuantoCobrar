@@ -1,12 +1,13 @@
 function calcular() {
+    let $ = document.querySelector.bind(document);
     // Captura os valores preenchidos no form.
-    let pesoNovelo = document.getElementById('pesoNovelo').value;
-    let valorNovelo = document.getElementById('valorNovelo').value;
-    let pesoFio = document.getElementById('pesoFio').value;
-    let valorHora = document.getElementById('valorHora').value;
-    let horasTrabalhadas = document.getElementById('horasTrabalhadas').value;
-    let margemLucro = document.getElementById('margemLucro').value;
-    let resultado = document.getElementById('resultado');
+    let pesoNovelo = $('#pesoNovelo').value;
+    let valorNovelo = $('#valorNovelo').value;
+    let pesoFio = $('#pesoFio').value;
+    let valorHora = $('#valorHora').value;
+    let horasTrabalhadas = $('#horasTrabalhadas').value;
+    let margemLucro = $('#margemLucro').value;
+    let resultado = $('#resultado');
 
     // Valida os valores dos dados inseridos.
     if (pesoNovelo < 1 || valorNovelo < 1 || pesoFio < 1 || valorHora < 1 || horasTrabalhadas < 1 || margemLucro < 1) {
@@ -37,12 +38,13 @@ function calcular() {
 
 // Limpa os valores preenchidos ao final da execução.
 function limpar() {
-    document.getElementById("pesoNovelo").value = "";
-    document.getElementById("valorNovelo").value = "";
-    document.getElementById("pesoFio").value = "";
-    document.getElementById("valorHora").value = "";
-    document.getElementById("horasTrabalhadas").value = "";
-    document.getElementById("margemLucro").value = "";
+    let $ = document.querySelector.bind(document);
+    $("#pesoNovelo").value = "";
+    $("#valorNovelo").value = "";
+    $("#pesoFio").value = "";
+    $("#valorHora").value = "";
+    $("#horasTrabalhadas").value = "";
+    $("#margemLucro").value = "";
     resultado.innerHTML = `Preencha os dados acima para ver o resultado!`;
 }
 
