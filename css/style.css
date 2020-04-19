@@ -1,0 +1,64 @@
+body {
+    font-family: Oswald;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/* 
+#logo {
+    position: absolute;
+    bottom: 0;
+} */
+
+#wrapper {
+    flex: 1;
+}
+
+#ovrd-box {
+    box-shadow: 5px 10px rgb(240, 240, 240);
+}
+
+#ovrd-limpar {
+    font-family: Oswald;
+    margin-top: 5px;
+}
+
+#ovrd-calcular {
+    font-family: Oswald;
+    background-color: #4caf50;
+    margin-top: 5px;
+}
+
+#ovrd-salvarPDF {
+    font-family: Oswald;
+    background-color: #4caf50;
+    margin-top: 5px;
+}
+
+#ovrd-copiar {
+    font-family: Oswald;
+    margin-top: 5px;
+}
+
+#ovrd-hero {
+    background-color: #4caf50;
+    padding: 2rem 1.5rem;
+
+}
+
+#ovrd-footer {
+    background-color: #4caf50;
+    padding: 10px;
+}
+
+#ovrd-footer a {
+    color: #ffffff;
+}
+
+#resultadoTabela {
+    margin-top: 5px;
+}
+
+#resultadoCopiar {
+    justify-content: center;
+}

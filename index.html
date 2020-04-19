@@ -1,63 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quanto Cobrar?</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Quanto Cobrar?</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/bulma.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
-    <header>
-        <h1>Quanto Cobrar?</h1>
-        <p>CALCULADORA PARA ARTESANATO</p>
-    </header>
-    
-    <section>
-        <div id="dados">
-            <p>Peso do novelo:
-                <input tabindex="1" type="number" required name="pesoNovelo" id="pesoNovelo" min="1">g.
-            </p>
-            <p>Valor do novelo: R$
-                <input tabindex="2" type="number" required name="valorNovelo" id="valorNovelo" min="1">
-            </p>
-            <p>Peso da peça pronta:
-                <input tabindex="3" type="number" required name="pesoFio" id="pesoFio" min="1">g.
-            </p>
-            <p>Quanto vale sua hora: R$
-                <input tabindex="4" type="number" required name="valorHora" id="valorHora" min="1">
-            </p>
-            <p>Total de horas trabalhadas:
-                <input tabindex="5" type="number" required name="horasTrabalhadas" id="horasTrabalhadas" min="1">h.
-            </p>
-            <p>Margem de lucro:
-                <input tabindex="6" type="number" required name="margemLucro" id="margemLucro" min="1">%.
-            </p>
-            <button tabindex="7" class="button" value="Limpar" id="limpar" onclick="limpar()">Limpar</button>
-            <button tabindex="8" class="button" value="Calcular" id="calcular" onclick="calcular()">Calcular</button>
+  <div id="wrapper">
+    <section class="hero is-primary">
+      <div class="hero-body" id="ovrd-hero">
+        <div class="container">
+          <header>
+            <h1 class="title has-text-centered">Quanto Cobrar?</h1>
+            <h2 class="subtitle has-text-centered">CALCULADORA PARA ARTESANATO</h2>
+            <figure class="image container is-64x64">
+              <img src="images/logo.png">
+            </figure>
+          </header>
         </div>
-        <div id="resultado">
-            Preencha os dados acima para ver o resultado!
-        </div>
+      </div>
     </section>
-    <p></p>
-    <section>
-        <div id="salvarPDF">
-            Digite o nome do(a) cliente e clique para salvar um PDF com o resultado:<br>
-            <input type="text" id="cliente" name="cliente">
 
-            <button tabindex="9" class="button" value="salvarPDF" id="salvarPDF" onclick="salvarPDF()">Salvar PDF</button>
+    <!-- Formulário principal -->
+    <div class="columns">
+      <div class="column is-half has-text-centered">
+        <div class="box" id="ovrd-box">
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">Descreva seu trabalho. Por exemplo: Blusa de Fulano</p>
+              <input class="input is-small is-rounded" id="descricao" type="text" required name="descricao"
+                placeholder="Blusa de Fulano">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">Peso do novelo em gramas(g):
+                <input class="input is-small is-rounded" type="number" required name="pesoNovelo" id="pesoNovelo"
+                  min="1">
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">Valor do novelo: R$</p>
+              <input class="input is-small is-rounded" type="number" required name="valorNovelo" id="valorNovelo"
+                min="1">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">Peso da peça pronta em gramas(g):</p>
+              <input class="input is-small is-rounded" type="number" required name="pesoFio" id="pesoFio" min="1">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">
+                Quanto vale sua hora: R$
+                <input class="input is-small is-rounded" type="number" required name="valorHora" id="valorHora" min="1">
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">
+                Total de horas trabalhadas:
+                <input class="input is-small is-rounded" type="number" required name="horasTrabalhadas"
+                  id="horasTrabalhadas" min="1">
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <p class="has-text-centered">
+                Margem de lucro (%):
+                <input class="input is-small is-rounded" type="number" required name="margemLucro" id="margemLucro"
+                  min="1">
+              </p>
+            </div>
+          </div>
+          <div id="resultado">
+          </div>
+          <button class="button is-danger" value="Limpar" id="ovrd-limpar" onclick="limpar()">
+            Limpar
+          </button>
+          <button class="button is-success" value="Calcular" id="ovrd-calcular" onclick="calcular()">
+            Calcular
+          </button>
         </div>
-    </section>
-     
-    <footer>
-        <p>GLLM 2019</p>
-    </footer>
+      </div>
+      <!-- Fim do formulário principal -->
 
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+      <div class="column">
+        <div class="box has-text-justified" id="ovrd-box">
+          Ao clicar em "Calcular" o resultado será exibido aqui.<br>
+          É possível copiar o resultado e colar diretamente numa planilha. Também é possível salvar um arquivo PDF com
+          as informações geradas.
+          <section class="section">
+            <div class="columns is-centered">
+              <div class="column is-narrow">
+                <div id="resultadoTabela">
+                  <!-- Aqui vai aparecer o resultado numa tabela -->
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="has-text-centered">
+            <button class="button is-info is-hidden" data-clipboard-target="#resultadoTabelaCopiar" id="ovrd-copiar"
+              value="copiar">Copiar</button>
+            <button class="button is-success is-hidden" id="ovrd-salvarPDF" value="salvarPDF" onclick="salvarPDF()">
+              Salvar PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <footer class="footer" id="ovrd-footer">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://github.com/guinuxbr/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/gllmarques" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/gllmarques/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/gll.marques" target="_blank"><i class="fab fa-instagram"></i></a><br>
+        <a href="https://guinuxbr.com" target="_blank">GuinuxBR</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/limpar.js"></script>
+  <script src="js/validar.js"></script>
+  <script src="js/calcular.js"></script>
+  <script src="js/salvarPDF.js"></script>
+  <script src="js/clipboard.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+    crossorigin="anonymous"></script>
+  <script>
+    var btn = document.getElementById('ovrd-copiar');
+    var clipboard = new ClipboardJS(btn);
+  </script>
 </body>
+
 </html>
