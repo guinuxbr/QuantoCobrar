@@ -10,4 +10,4 @@ Página em HTML + CSS + JavaScript que ajuda a calcular quanto cobrar por um tra
 
 Fiz para minha mãe! 😁❤️  
 
-Disponível em: <https://guinuxbr.github.io/QuantoCobrar/>
+Disponível em: <http://quantocobrar.guinuxbr.com/>
